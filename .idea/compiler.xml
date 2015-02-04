@@ -26,5 +26,8 @@
         <module name="mllib" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mllib" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
