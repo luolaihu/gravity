@@ -163,6 +163,7 @@ public class SimilarJob extends AbstractJob{
 //                    long otherItemID = similarItem.getRecId();
 //                    ctx.write(new Text(itemID +"\t" + otherItemID), new DoubleWritable(similarItem.getScore()));
 //                }
+                System.out.println("aga");
             }
         }
 }
