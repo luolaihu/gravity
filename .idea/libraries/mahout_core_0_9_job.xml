@@ -1,9 +1,7 @@
 <component name="libraryTable">
   <library name="mahout-core-0.9-job">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/mahout-core-0.9-job.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/mahout-core-0.9.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/mahout-math-0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mllib/lib/mahout-core-0.9-job.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

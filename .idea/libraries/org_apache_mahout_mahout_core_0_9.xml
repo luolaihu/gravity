@@ -5,7 +5,6 @@
       <root url="jar://C:/Documents and Settings/luolaihu1/.m2/repository/org/apache/mahout/mahout-core/0.9/mahout-core-0.9.jar!/" />
       <root url="jar://C:/Documents and Settings/luolaihu1/.m2/repository/org/apache/mahout/mahout-math/0.9/mahout-math-0.9.jar!/" />
       <root url="jar://C:/Documents and Settings/luolaihu1/.m2/repository/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar!/" />
-      <root url="jar://C:/Documents and Settings/luolaihu1/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar!/" />
       <root url="jar://C:/Documents and Settings/luolaihu1/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar!/" />
       <root url="jar://C:/Documents and Settings/luolaihu1/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.12/jackson-core-asl-1.9.12.jar!/" />
       <root url="jar://C:/Documents and Settings/luolaihu1/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.12/jackson-mapper-asl-1.9.12.jar!/" />

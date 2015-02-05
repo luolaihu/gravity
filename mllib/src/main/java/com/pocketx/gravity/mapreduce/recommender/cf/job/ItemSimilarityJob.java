@@ -15,17 +15,11 @@
  * limitations under the License.
  */
 
-package com.pocketx.gravity.recommender.cf;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
+package com.pocketx.gravity.mapreduce.recommender.cf.job;
 
 import com.google.common.base.Preconditions;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Job;
@@ -36,7 +30,6 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.ToolRunner;
 import org.apache.mahout.cf.taste.hadoop.EntityEntityWritable;
 import org.apache.mahout.cf.taste.hadoop.TasteHadoopUtils;
-import org.apache.mahout.cf.taste.hadoop.preparation.PreparePreferenceMatrixJob;
 import org.apache.mahout.cf.taste.hadoop.similarity.item.TopSimilarItemsQueue;
 import org.apache.mahout.cf.taste.similarity.precompute.SimilarItem;
 import org.apache.mahout.common.AbstractJob;
@@ -46,6 +39,11 @@ import org.apache.mahout.math.VectorWritable;
 import org.apache.mahout.math.hadoop.similarity.cooccurrence.RowSimilarityJob;
 import org.apache.mahout.math.hadoop.similarity.cooccurrence.measures.VectorSimilarityMeasures;
 import org.apache.mahout.math.map.OpenIntLongHashMap;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p>Distributed precomputation of the item-item-similarities for Itembased Collaborative Filtering</p>
@@ -77,7 +75,7 @@ import org.apache.mahout.math.map.OpenIntLongHashMap;
  * <li>--threshold (double): discard item pairs with a similarity value below this</li>
  * </ol>
  *
- * <p>General command line options are documented in {@link AbstractJob}.</p>
+ * <p>General command line options are documented in {@link org.apache.mahout.common.AbstractJob}.</p>
  *
  * <p>Note that because of how Hadoop parses arguments, all "-D" arguments must appear before all other arguments.</p>
  */
