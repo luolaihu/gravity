@@ -29,6 +29,7 @@
             <!--<artifactId>spark-graphx_2.10</artifactId>-->
             <!--<version>1.2.0</version>-->
         <!--</dependency>-->
+
         <dependency>
             <groupId>mahout.core</groupId>
             <artifactId>mahout.core</artifactId>

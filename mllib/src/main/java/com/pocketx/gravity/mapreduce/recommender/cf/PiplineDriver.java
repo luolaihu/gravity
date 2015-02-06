@@ -1,6 +1,6 @@
 package com.pocketx.gravity.mapreduce.recommender.cf;
 
-import com.pocketx.gravity.mapreduce.recommender.cf.job.ItemSimilarityJob;
+import com.pocketx.gravity.mapreduce.recommender.cf.hadoop.job.ItemSimilarityJob;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -46,7 +46,7 @@ public class PiplineDriver {
     public void startPipline(){
         Configuration conf = new Configuration();
         conf.setInt("mapred.reduce.tasks", 20);
-        conf.set("mapred.child.java.opts","-Xmx2048m");
+        conf.set("mapred.child.java.opts","-Xmx1024m");
         conf.set("mapred.job.queue.name","pms");
         conf.set("pool_name","yihaodian/htms-imp");
 
@@ -79,7 +79,7 @@ public class PiplineDriver {
             }
 
             String arg[] = {"--input",input.toString(),"--output",resultData,"--tempDir",tempPath,"--booleanData",booleanData,"--maxSimilaritiesPerItem",
-                    maxSimilarPerItem,"--maxPrefs",maxPrefsPerUser,"--minPrefsPerUser",minPrefsPerUser,"--similarityClassname",similarClassName};
+                    maxSimilarPerItem,"--maxPrefsPerUser",maxPrefsPerUser,"--minPrefsPerUser",minPrefsPerUser,"--similarityClassname",similarClassName};
             int status = ToolRunner.run(conf,new ItemSimilarityJob(),arg);
 
         } catch (Exception e) {
