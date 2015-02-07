@@ -1,4 +1,4 @@
-package com.pocketx.gravity.mapreduce.recommender.cf.mapred;
+package com.pocketx.gravity.recommender.cf.similarity.mapreduce;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Reducer;

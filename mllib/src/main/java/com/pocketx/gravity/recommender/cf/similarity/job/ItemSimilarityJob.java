@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.pocketx.gravity.mapreduce.recommender.cf.job;
+package com.pocketx.gravity.recommender.cf.similarity.job;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -24,8 +24,8 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.google.common.base.Preconditions;
-import com.pocketx.gravity.mapreduce.recommender.cf.utils.TasteHadoopUtils;
-import com.pocketx.gravity.mapreduce.recommender.cf.utils.TopK;
+import com.pocketx.gravity.common.TasteHadoopUtils;
+import com.pocketx.gravity.common.TopK;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 
@@ -43,7 +43,6 @@ import org.apache.mahout.common.AbstractJob;
 import org.apache.mahout.common.HadoopUtil;
 import org.apache.mahout.math.Vector;
 import org.apache.mahout.math.VectorWritable;
-import org.apache.mahout.math.hadoop.similarity.cooccurrence.RowSimilarityJob;
 import org.apache.mahout.math.hadoop.similarity.cooccurrence.measures.VectorSimilarityMeasures;
 import org.apache.mahout.math.map.OpenIntLongHashMap;
 

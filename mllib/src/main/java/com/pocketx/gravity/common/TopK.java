@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.pocketx.gravity.mapreduce.recommender.cf.utils;
+package com.pocketx.gravity.common;
 
 import java.util.Collections;
 import java.util.Comparator;

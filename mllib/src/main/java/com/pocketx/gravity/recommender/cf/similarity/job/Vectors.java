@@ -1,9 +1,10 @@
-package com.pocketx.gravity.mapreduce.recommender.cf.hadoop.util;
+package com.pocketx.gravity.recommender.cf.similarity.job;
 
 import com.google.common.base.Preconditions;
 import com.google.common.io.Closeables;
 import com.google.common.primitives.Doubles;
 
+import com.pocketx.gravity.common.TopK;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FSDataOutputStream;

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.pocketx.gravity.mapreduce.recommender.cf.utils;
+package com.pocketx.gravity.common;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;

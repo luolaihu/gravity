@@ -1,6 +1,6 @@
-package com.pocketx.gravity.mapreduce.recommender.cf;
+package com.pocketx.gravity.recommender.cf.similarity;
 
-import com.pocketx.gravity.mapreduce.recommender.cf.hadoop.job.ItemSimilarityJob;
+import com.pocketx.gravity.recommender.cf.similarity.job.ItemSimilarityJob;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -30,11 +30,11 @@ public class PiplineDriver {
     public static void main(String[] args){
         PiplineDriver piplineDriver = new PiplineDriver();
         piplineDriver.booleanData = "true";
-        piplineDriver.maxPrefsPerUser = "1000";
+        piplineDriver.maxPrefsPerUser = "10000";
         piplineDriver.minPrefsPerUser = "1";
         piplineDriver.maxSimilarPerItem = "200";
         piplineDriver.trainDay = 180;
-        piplineDriver.similarClassName = "org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity";
+        piplineDriver.similarClassName = "org.apache.mahout.math.hadoop.similarity.cooccurrence.measures.LoglikelihoodSimilarity";
         if(args.length == 3) {
             piplineDriver.seedFilePath = args[0];
             piplineDriver.resultDir = args[1];
@@ -48,7 +48,6 @@ public class PiplineDriver {
         conf.setInt("mapred.reduce.tasks", 20);
         conf.set("mapred.child.java.opts","-Xmx1024m");
         conf.set("mapred.job.queue.name","pms");
-        conf.set("pool_name","yihaodian/htms-imp");
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String version = df.format(new Date(new Date().getTime() - 24*1000*3600));

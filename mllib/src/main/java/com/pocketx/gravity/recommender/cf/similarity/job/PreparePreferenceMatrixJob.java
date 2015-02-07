@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package com.pocketx.gravity.mapreduce.recommender.cf.job;
+package com.pocketx.gravity.recommender.cf.similarity.job;
 
-import com.pocketx.gravity.mapreduce.recommender.cf.mapred.ToItemVectorsMapper;
-import com.pocketx.gravity.mapreduce.recommender.cf.mapred.ToItemVectorsReducer;
+import com.pocketx.gravity.recommender.cf.similarity.mapreduce.ToItemVectorsMapper;
+import com.pocketx.gravity.recommender.cf.similarity.mapreduce.ToItemVectorsReducer;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;

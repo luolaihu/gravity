@@ -18,11 +18,11 @@
 copy from mahout 0.7
  */
 
-package com.pocketx.gravity.mapreduce.recommender.cf.job;
+package com.pocketx.gravity.recommender.cf.similarity.job;
 
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
-import com.pocketx.gravity.mapreduce.recommender.cf.utils.TopK;
+import com.pocketx.gravity.common.TopK;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
