@@ -3,6 +3,7 @@ package com.pocketx.gravity.recommender.cf.rule.job;
 import com.pocketx.gravity.recommender.cf.rule.mapreduce.RelatedProductRulesGenerateReducer;
 import com.pocketx.gravity.recommender.cf.rule.model.AssociationRuleJob;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.util.ToolRunner;
 
 import java.io.IOException;
 import java.util.Date;
@@ -11,7 +12,7 @@ import java.util.Date;
  * @author zhongxiaodong
  * @version created 2013-7-8
  */
-public class RelatedProducts extends BinaryRelationJob {
+public class RelatedProducts {
 	private final static int minSupport = 1;
 	private final static double minConfidence = 0;
 	private final static double minLoyalty = 0;
@@ -45,7 +46,7 @@ public class RelatedProducts extends BinaryRelationJob {
 		System.out.println(new Date().toString()
 				+ "INFO: start calculate related product rules");
 		try {
-			relatedProducts.calculateRelatedRules(freQuenPath,serialProds,disPath,relatePath);
+			relatedProducts.calculateRelatedRules(freQuenPath,serialProds,disPath,relatePath,conf);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
@@ -82,15 +83,24 @@ public class RelatedProducts extends BinaryRelationJob {
 	 */
 	public void calculateRelatedRules(String productFreqPatternPath,
 			String serialProdsPath, String itemDistributePath,
-			String relatedProductTPath) throws Exception {
+			String relatedProductTPath,Configuration conf) throws Exception {
 		// configure
-		setMinSupport(minSupport);
-		setMinConfidence(minConfidence);
-		setMinLoyalty(minLoyalty);
-		setRelatedRulesReducer(RelatedProductRulesGenerateReducer.class);
+        BinaryRelationJob binaryRelationJob = new BinaryRelationJob();
+        binaryRelationJob.setMinSupport(minSupport);
+        binaryRelationJob.setMinConfidence(minConfidence);
+        binaryRelationJob.setMinLoyalty(minLoyalty);
+        binaryRelationJob.setRelatedRulesReducer(RelatedProductRulesGenerateReducer.class);
+
+        String[] args = new String[6];
+        // build args
+        args[0] = "--input";
+        args[1] = productFreqPatternPath;
+        args[2] = "--output";
+        args[3] = relatedProductTPath;
+        args[4] = "--itemdistribute";
+        args[5] = itemDistributePath;
 
 		// generate rules
-		generateRelationRules(productFreqPatternPath, itemDistributePath,
-				relatedProductTPath);
-	}
+        ToolRunner.run(conf,binaryRelationJob,args);
+    }
 }

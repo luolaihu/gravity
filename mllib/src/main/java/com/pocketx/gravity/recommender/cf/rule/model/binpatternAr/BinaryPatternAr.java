@@ -56,13 +56,11 @@ public class BinaryPatternAr extends BaseAr {
 	public void generateFrequentPatterns(String input, String output,
 			Configuration conf) throws Exception {
 		String[] args = new String[4];
-
 		// build args
 		args[0] = "--input";
 		args[1] = input;
 		args[2] = "--output";
 		args[3] = output;
-
 		// generate frequent patterns
 		ToolRunner.run(conf, this, args);
 
